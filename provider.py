@@ -75,6 +75,7 @@ class Provider(object):
         response_headers['Content-Type'] = 'application/json;charset=UTF-8'
         response_headers['Cache-Control'] = 'no-store'
         response_headers['Pragma'] = 'no-cache'
+        response_headers['data'] = json.dumps(data)
         return self._make_response(json.dumps(data),
                                    response_headers,
                                    status_code)
